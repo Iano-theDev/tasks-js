@@ -73,23 +73,24 @@ form button:hover {
     cursor: pointer;
     margin: .1rem;
     color: #ffffff;
+    border-radius: .3rem;
     transition: all 0.7s ease;
 }
 
 .trash-btn {
-    background: rgb(210, 57, 57);
+    background: rgb(210, 57, 116);
 }
 
 .trash-btn:hover {
     background: #ffffff;
-    color: rgb(210, 57, 57);
+    color: rgb(210, 57, 116);
 }
 
 .complete-btn {
-    background: rgb(61, 217, 61);
+    background: #0852b2;
 }
 
 .complete-btn:hover {
-    color: rgb(61, 217, 61);
+    color: #0852b2;
     background: #ffffff;
 }
