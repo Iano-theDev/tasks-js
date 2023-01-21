@@ -43,7 +43,6 @@ form button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .todo-list {
@@ -60,10 +59,12 @@ form button:hover {
     align-items: center;
     border-radius: .2em;
     padding: .3em;
+    transition: all 1s ease;
 }
 
 .todo li {
     flex: 1;
+    
 }
 
 .trash-btn,
@@ -75,6 +76,11 @@ form button:hover {
     color: #ffffff;
     border-radius: .3rem;
     transition: all 0.7s ease;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
 }
 
 .trash-btn {
@@ -93,4 +99,14 @@ form button:hover {
 .complete-btn:hover {
     color: #0852b2;
     background: #ffffff;
+}
+
+.some-class {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(10px) rotateX(45deg) rotate3d(90deg);
+    opacity: 0;
 }
