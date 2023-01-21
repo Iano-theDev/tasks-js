@@ -13,16 +13,19 @@
     <header>
         <h1>Tasks To Do</h1>
     </header>
-    <div class="select">
-        <select name="todos" class="filter-todos">
 
-        </select>
-    </div>
     <form action="">
         <input type="text" class="todo-input">
         <button class="todo-button" type="submit">
             <i class="fa-solid fa-square-plus"></i>
         </button>
+        <div class="select">
+            <select name="todos" class="filter-todos">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+        </div>
     </form>
     <div class="todo-container">
         <ul class="todo-list">

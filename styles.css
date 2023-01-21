@@ -107,7 +107,36 @@ form button:hover {
 }
 
 .fall {
-    transform: translateX(8rem);
+    transform: translateX(10rem);
     opacity: 0;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color:#0852b2;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.select::after {
+    content: "\25BC"\ ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    background: #0852b2;
+}
