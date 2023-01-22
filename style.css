@@ -75,7 +75,7 @@ form button:hover {
     margin: .1rem;
     color: #ffffff;
     border-radius: .3rem;
-    transition: all 0.1s ease;
+    transition: all 0.1ms ease;
 }
 
 .fa-trash,
@@ -101,7 +101,7 @@ form button:hover {
     background: #ffffff;
 }
 
-.some-class {
+.completed {
     text-decoration: line-through;
     opacity: 0.5;
 }
@@ -129,13 +129,21 @@ select {
     color:#0852b2;
     width: 10rem;
     cursor: pointer;
+    padding: .6rem;
 }
 
 .select::after {
-    content: "\25BC"\ ;
+    content: "\25BC";
     position: absolute;
+    top: 0;
     right: 0;
-    padding: 1rem;
+    padding: .6rem;
     pointer-events: none;
     background: #0852b2;
+    transition:all 0.3s ease;
+}
+
+.select:hover::after {
+    background: #ffffff;
+    color: #0852b2;
 }

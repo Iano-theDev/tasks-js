@@ -2,16 +2,18 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterOption = document.querySelector('.filter-todo')
 
 
 //Event listeners
+document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
+filterOption.addEventListener('click', filterTodo);
 
 //Functions
 function addTodo(event) {
     event.preventDefault();
-    console.log("Hello")
     // create div elelmet to display tasks to be done
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
@@ -22,11 +24,20 @@ function addTodo(event) {
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
+    // Add task to local storage
+    saveLocalTodos(todoInput.value)
+
     //check button for completed tasks
     const completedButton = document.createElement('button')
     completedButton.innerHTML= '<i class="fa-solid fa-check"></i>';
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
+
+    //undo a comleted task***************************************
+    const undoComplete = document.createElement('button');
+    undoComplete.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
+    undoComplete.classList.add("undo-button");
+    // todoDiv.appendChild(undoComplete);
 
     //delete button to delete tasks
     const trashButton = document.createElement('button')
@@ -37,6 +48,8 @@ function addTodo(event) {
     //append to list
     todoList.appendChild(todoDiv);
 
+    //clear task input value
+    todoInput.value = "";
     
 }
 
@@ -56,7 +69,91 @@ function deleteCheck(e) {
     //mark tasks as completed
     if(item.classList[0] === 'complete-btn'){
         const todo = item.parentElement
-        todo.classList.toggle("some-class");
+        todo.classList.toggle("completed");
         // item.innerHTML = '<i class="fa-solid fa-rotate-left"></i>'
     }
 }
+
+function filterTodo(e) {
+    const todos = todoList.childNodes;
+    todos.forEach(todo => {
+        switch(e.target.value) {
+            case "all":
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if (todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if (todo.classList.contains("completed")){
+                    todo.style.display = "none";
+                } else {
+                    todo.style.display = "flex";
+                }
+                break;
+        }
+    });
+}
+
+// save tasks in local storage
+function saveLocalTodos(todo) {
+
+    // check for pre-existing todo tasks in local storage
+    let todos;
+    if (localStorage.getItem('todos') === null){
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+// retrive tasks from local storage
+function getTodos() {
+    
+    let todos;
+    if (localStorage.getItem('todos') === null){
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+        
+    }
+    todos.forEach(todo => {
+        // create div elelmet to display tasks to be done
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
+
+        //create single task item 
+        const newTodo = document.createElement('li');
+        newTodo.innerText = todo;
+        newTodo.classList.add('todo-item');
+        todoDiv.appendChild(newTodo);
+
+        // Add task to local storage
+        // saveLocalTodos(todoInput.value)
+
+        //check button for completed tasks
+        const completedButton = document.createElement('button')
+        completedButton.innerHTML= '<i class="fa-solid fa-check"></i>';
+        completedButton.classList.add("complete-btn");
+        todoDiv.appendChild(completedButton);
+
+        //delete button to delete tasks
+        const trashButton = document.createElement('button')
+        trashButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
+        trashButton.classList.add("trash-btn");
+        todoDiv.appendChild(trashButton);
+
+        //append to list
+        todoList.appendChild(todoDiv);
+    })
+}
+
+
+//Delete tasks from local storage
