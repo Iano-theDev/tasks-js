@@ -68,7 +68,8 @@ form button:hover {
 }
 
 .trash-btn,
-.complete-btn {
+.complete-btn,
+.update-btn {
     border: none;
     padding: .5rem;
     cursor: pointer;
@@ -79,7 +80,8 @@ form button:hover {
 }
 
 .fa-trash,
-.fa-check {
+.fa-check,
+.fa-pen-to-square {
     pointer-events: none;
 }
 
@@ -98,6 +100,15 @@ form button:hover {
 
 .complete-btn:hover {
     color: #0852b2;
+    background: #ffffff;
+}
+
+.update-btn {
+    background: #6c6c6c;
+}
+
+.update-btn:hover {
+    color: #6c6c6c;
     background: #ffffff;
 }
 

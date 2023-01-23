@@ -29,7 +29,14 @@ function addTodo(event) {
     
         // Add task to local storage
         saveLocalTodos(todoInput.value)
-    
+
+        //edit button to update an already keyed in task.
+        const updateButton = document.createElement('button');
+        updateButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+        updateButton.classList.add('update-btn');
+        todoDiv.appendChild(updateButton);
+
+
         //check button for completed tasks
         const completedButton = document.createElement('button')
         completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -142,6 +149,12 @@ function getTodos() {
         newTodo.innerText = todo;
         newTodo.classList.add('todo-item');
         todoDiv.appendChild(newTodo);
+
+        //edit button to update an already keyed in task.
+        const updateButton = document.createElement('button');
+        updateButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+        updateButton.classList.add('update-btn');
+        todoDiv.appendChild(updateButton);
 
         //check button for completed tasks
         const completedButton = document.createElement('button')
