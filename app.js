@@ -66,6 +66,7 @@ function addTodo(event) {
     
 }
 
+//check completed task, delete task and update task
 function deleteCheck(e) {
     const item = e.target;
 
@@ -85,6 +86,15 @@ function deleteCheck(e) {
         const todo = item.parentElement
         todo.classList.toggle("completed");
         // item.innerHTML = '<i class="fa-solid fa-rotate-left"></i>'
+    }
+
+    if(item.classList[0] === 'update-btn'){
+        // const todoText= todo.innerText
+        const todo = item.parentElement;
+        const todoText = todo.innerText
+        todoInput.value = todoText;
+        todo.remove();
+        removeLocalTodos(todo)
     }
 }
 
