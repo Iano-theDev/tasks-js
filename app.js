@@ -32,7 +32,7 @@ function addTodo(event) {
     
         //check button for completed tasks
         const completedButton = document.createElement('button')
-        completedButton.innerHTML= '<i class="fa-solid fa-check"></i>';
+        completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
         completedButton.classList.add("complete-btn");
         todoDiv.appendChild(completedButton);
     
@@ -44,7 +44,7 @@ function addTodo(event) {
     
         //delete button to delete tasks
         const trashButton = document.createElement('button')
-        trashButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
+        trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         trashButton.classList.add("trash-btn");
         todoDiv.appendChild(trashButton);
     
