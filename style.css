@@ -14,8 +14,14 @@ header,
 form {
     min-height: 20vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+form {
+    margin: 0em 5em 0em 5em;
+    /* border: 1px solid #ffffff; */
 }
 
 form input, 
@@ -24,19 +30,28 @@ form button {
     font-size: 1rem;
     border: none;
     background: white;
+    width: 100%;
 }
 
+.todo-title,
+.todo-input,
+.todo-date,
+.todo-time:focus {
+    outline: none;
+}
+
+
 form button {
-    color: #0852b2;
-    background: #ffffff;
+    background: #0852b2;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.7s ease;
-    padding: .5rem;
+    padding: .6rem;
 }
 
 form button:hover {
-    background: #0852b2;
-    color: #ffffff;
+    color: #089bb2;
+    background: #ececec;
 }
 
 .todo-container {
@@ -134,11 +149,12 @@ select {
     margin: 1rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 select {
     color:#0852b2;
-    width: 10rem;
+    width: 100%;
     cursor: pointer;
     padding: .6rem;
 }
