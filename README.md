@@ -1,2 +1,2 @@
 # tasks-js
-##To do tasks application in JavaScript
+## To do tasks application in JavaScript
