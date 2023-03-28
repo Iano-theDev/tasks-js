@@ -207,13 +207,6 @@ function getTodos() {
         // create div elelmet to display tasks to be done
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo");
-
-        //create single task item
-        // const newTodo = document.createElement('li');
-        // newTodo.innerText = todo;
-        // newTodo.classList.add('todo-item');
-        // todoDiv.appendChild(newTodo);
-
                 
         //create a div container for buttons
         const todoButtonsContainer = document.createElement('div');
