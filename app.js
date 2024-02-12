@@ -225,25 +225,25 @@ function getTodos() {
 
         //create new todo title
         const newTitle = document.createElement('li');
-        newTitle.innerText = todo;
+        newTitle.innerText = todo.title;
         newTitle.classList.add('item-title');
         todoDiv.appendChild(newTitle);
     
         //create single task item 
         const newTodo = document.createElement('li');
-        newTodo.innerText = todo
+        newTodo.innerText = todo.description
         newTodo.classList.add('todo-item');
         todoDiv.appendChild(newTodo);
 
         //create new todo date item
         const newDate = document.createElement('li');
-        newDate.innerText = todo
+        newDate.innerText = todo.date
         newDate.classList.add('item-date');
         todoDiv.appendChild(newDate);
 
         //create new todo time item
         const newTime = document.createElement('li');
-        newTime.innerText = todo
+        newTime.innerText = todo.time
         newTime.classList.add('item-time');
         todoDiv.appendChild(newTime);
 
