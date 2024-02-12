@@ -55,10 +55,20 @@ function addTodo(event) {
         todoDiv.appendChild(newTime);
     
         // Add task to local storage
-        saveLocalTodos(todoTitle.value)
-        saveLocalTodos(todoInput.value)
-        saveLocalTodos(todoDate.value)
-        saveLocalTodos(todoTime.value)
+        // saveLocalTodos(todoTitle.value)
+        // saveLocalTodos(todoInput.value)
+        // saveLocalTodos(todoDate.value)
+        // saveLocalTodos(todoTime.value)
+
+        // create an object and save to locals 
+        let taskItem = {
+            "title": todoTitle.value,
+            "description": todoInput.value,
+            "date": todoDate.value,
+            "time": todoTime.value
+        }
+
+        saveLocalTodos(taskItem);
 
 
         //edit button to update an already keyed in task.
